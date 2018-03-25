@@ -1,0 +1,6 @@
+EDITOR=emacsclient
+BROWSER=qutebrowser
+DUNST_SIZE='250x20-30+30'
+DUNST_FONT='OfficeCodePro-Bold 7'
+PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+GEM_HOME=$HOME/.gem
