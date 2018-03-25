@@ -1,0 +1,16 @@
+# requires cron and postfix
+# run crontrab -e and paste this:
+# MAILTO=jeremy.ottley@gmail.com
+# LOGFILE=/var/log/cron-stump.log
+
+# 1. minute (0-59)
+# |   2. hour (0-23)
+# |   |   3. day of month (1-31)
+# |   |   |   4. month (1-12)
+# |   |   |   |   5. day of week (0-7: 0 or 7 is Sun, or use names)
+# |   |   |   |   |   6. commandline
+# |   |   |   |   |   |
+#min hr  dom mon dow command
+00   13   *   *   *  . /etc/profile && (echo; date; sudo apt-get check && sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove --purge && sudo apt-get autoclean)
+#To check every */time you must use e.g. */2 to check every 2 min or any other time value.
+#If you want to automatically reboot your computer upon a successful upgrade, append '&& reboot' to the above line.
