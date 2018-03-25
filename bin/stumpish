@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# `fake' stumpish.
+# This loads the latest version of `real' stumpish
+
+stump_start="${HOME}/quicklisp"
+stump_middle=$(cat ${stump_start}/dists/quicklisp/installed/releases/stumpwm.txt)
+stump_end="contrib/stumpish"
+
+stumpish=${stump_start}/${stump_middle}${stump_end}
+
+# Note the `.' - the `real' stumpish must be sourced!
+
+. ${stumpish}
