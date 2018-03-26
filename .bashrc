@@ -68,6 +68,10 @@ rm -rf "$HOME/.thumbnails"
 rm -rf "$HOME/.local/share/Trash"
 }
 
+md_to_pdf() {
+pandoc --latex-engine=xelatex -V mainfont="Times New Roman" -V fontsize=12pt -V geometry:margin=1in -V documentclass=article -V linestrech=1.5 -V link-as-notes $1.md -s -o $2.pdf
+}
+
 # Create a new directory and enter it
 mkd() { mkdir $1 && cd $1; }
 
