@@ -33,8 +33,12 @@ then
 fi
 
 ## Utils
-# Generic Colorize Functions
+# Slightly rounded bars
+export TERM_DECORATION_LEFT="퟼"
+export TERM_DECORATION_RIGHT="퟽"
+export TERM_DECORATION_SEPARATOR=""
 
+# Generic Colorize Functions
 RED="`tput setaf 1`"
 GREEN="`tput setaf 2`"
 YELLOW="`tput setaf 3`"
