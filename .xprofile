@@ -1,11 +1,36 @@
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
 
+LANG="en_US.UTF-8"
 EDITOR=emacsclient
 BROWSER=qutebrowser
 DUNST_SIZE='250x20-30+30'
 DUNST_FONT='OfficeCodePro-Bold 7'
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 GEM_HOME=$HOME/.gem
+MANWIDTH=80
+LESS='-F -g -i -M -R -S -w -X -z-4'
+CC=/usr/bin/clang
+CXX=/usr/bin/clang++
+
+# download folder is on ramdisk
+test -d "$HOME/tmp/downloads" || mkdir "$HOME/tmp/downloads"
+
+# Notes
+NOTES_BASE_PATH=""
+[ -d "$HOME/Documents/notes" ] && NOTES_BASE_PATH="$HOME/Documents/notes"
+[ -d "$HOME/docs/notes" ]      && NOTES_BASE_PATH="$HOME/docs/notes"
+if [ -n "NOTES_BASE_PATH" ]
+then
+  alias todo="(cd $NOTES_BASE_PATH; $EDITOR todo.txt)"
+  alias lstodo="rg --no-line-number ' *(\[.\].*\*)$' $NOTES_BASE_PATH/notes/todo.txt --replace '\$1' | sort"
+  
+  # Daily journal
+  function journal() {
+    today=$(date +"%m-%d-%y")
+    [ ! -f $file ] && echo "# $today" > $file
+    (cd $NOTES_BASE_PATH; $EDITOR "journal/$today.txt")
+  }
+fi
 
 ## Utils
 # Generic Colorize Functions
