@@ -1,0 +1,101 @@
+! Colors
+! Import the color file
+#include ".colors"
+
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
+
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+
+*.color8:       base03
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
+*.color15:      base07
+
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06
+
+Xft*dpi:                    96
+Xft*antialias:              true
+Xft*hinting:                true
+Xft*hintstyle:		    hintfull
+Xft*rgba:		    rgb
+
+XTerm*scrollBar: False
+XTerm*loginshell: True
+
+XTerm*utf8: True
+XTerm*locale: True
+XTerm*utf8Title: True
+XTerm*renderFont: True
+XTerm*preeditType: Root
+XTerm*xftAntialias: true
+XTerm*faceName: FiraCode-Regular:size=12
+
+XTerm*trimSelection: true
+XTerm*eightBitInput: false
+XTerm*metaSendsEscape: true
+
+! Copy and paste with clipboard
+XTerm*translations: #override \
+	Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
+	Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
+
+! Allow selecting email/url by double-click
+XTerm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
+
+! Man pages colors
+
+*VT100.colorBDMode:                  true
+*VT100.colorBD:                      red
+*VT100.colorULMode:                  true
+*VT100.colorUL:                      cyan   
+*VT100.veryBoldColors:               6
+
+! Cursor theme
+Xcursor.theme: DMZ
+
+emacs.font:                 FiraCode-Regular-12
+emacs.paneFont:             FiraCode-Regular-12
+emacs.pointerColor:         white
+emacs.scrollBarWidth:       0
+emacs.useXIM:               true
+emacs.verticalScrollBars:   false
+
+XClock*foreground: #807A86
+XClock*background: #1D1C25
+XClock*majorColor:  rgba:80/7a/86/ff
+XClock*minorColor:  rgba:80/7a/86/ff
+XClock*hourColor:   rgba:80/7a/86/ff
+XClock*minuteColor: rgba:80/7a/86/ff
+XClock*secondColor: rgba:80/7a/86/ff
+
+st.termname:    st-256color
+!st.font:        FiraCode-Regular:size=7:hinting=full:antialias=false
+st.font:        dina10px:size=7:hinting=full:antialias=false
+st.cwscale:     1.1
+st.chscale:     1.1
+st.bellvolume:  0
+st.borderpx:    10px
+
+UXTerm*background:	#130A07
+UXTerm*cursorColor:	#F3E9D5
+UXTerm*foreground:	#F3E9D5
+
+dzen2.font: xft:FiraCode-Regular:size=11
