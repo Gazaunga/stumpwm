@@ -1,0 +1,44 @@
+# Image rendering, converting, and pixelization are taken from https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/. Credits to user `Babel2`.
+
+#!/bin/bash
+
+# Get keyboard layout code
+case "$(xset -q|grep LED| awk '{ print $10 }')" in
+    "00000002") KB_LANG="eng";; # English
+    "00001002") KB_LANG="bg";; # Other
+esac
+
+SCR_WIDTH=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
+JOKE_LEN=$SCR_WIDTH
+
+{
+    while [[ "$SCR_WIDTH" -le "$JOKE_LEN" ]]
+    do
+        JOKE=$(curl -s 'https://api.chucknorris.io/jokes/random' | jq -r '.value')
+        JOKE_LEN=$((${#JOKE} * 12))
+    done
+} || {
+    JOKE="Chuck Norris is watching you..."
+    JOKE_LEN=$((${#JOKE} * 12))
+}
+
+killall compton
+
+IMAGE=/tmp/lockscreen.png
+TEXT=/tmp/locktext.png
+ICON=$HOME/.config/i3/spaceship.png
+LANG=/tmp/lang.png
+
+scrot $IMAGE
+convert $IMAGE -scale 10% -scale 1000% -fill black -colorize 25% $IMAGE
+convert -size "$JOKE_LEN"x60 xc:#FAFAFA -font Ubuntu -pointsize 24 -fill xc:#3F464D -gravity center -annotate +0+0 "$JOKE" $TEXT;
+[ -f $LANG ] || {
+    convert -size 30x30 xc:#3F464D -font Ubuntu -pointsize 12 -fill xc:#FAFAFA -gravity center -annotate +0+0 "$KB_LANG" $LANG;
+}
+convert $IMAGE $TEXT -gravity center -geometry +0+200 -composite $IMAGE
+convert $IMAGE $LANG -gravity NorthEast -geometry +0+1 -composite $IMAGE
+convert $IMAGE $ICON -gravity center -composite -matte $IMAGE
+
+i3lock -n -u -i $IMAGE
+
+compton -b -f --fade-in-step=0.08 --fade-out-step=0.08 -i 0.7 --shadow-exclude 'class_g = "Firefox"' --focus-exclude 'class_g = "Firefox"' --shadow-exclude 'class_g = "Rofi"' --focus-exclude 'class_g = "Rofi"'
