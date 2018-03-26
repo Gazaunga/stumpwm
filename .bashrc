@@ -34,6 +34,7 @@ alias l='ls -CF'
 alias ls='ls -hBG'
 alias l.='ls -d .*'
 alias fuck="sudo !!"
+alias ekill='emacsclient -e "(kill-emacs)"'
 alias glg='git log --graph --pretty=format":%C(yellow)%h%Cblue%d%Creset %s %C(white) %an,%ar%Creset" --abbrev-commit --decorate'
 alias glgh='git log --graph --pretty=format":%C(yellow)%h%Cblue%d%Creset %s %C(white) %an,%ar%Creset" --abbrev-commit --decorate | head'
 alias glo='git log --oneline --decorate'
