@@ -26,7 +26,7 @@ killall compton
 
 IMAGE=/tmp/lockscreen.png
 TEXT=/tmp/locktext.png
-ICON=$HOME/.config/i3/spaceship.png
+ICON=$HOME/bin/lock/spaceship.png
 LANG=/tmp/lang.png
 
 scrot $IMAGE
