@@ -57,6 +57,16 @@ values."
       ruby-on-rails
       javascript
       yaml
+      common-lisp
+      emacs-lisp
+      csv
+      go
+      latex
+      shell-scripts
+      ansible
+      pandoc
+      pdf-tools
+      vagrant
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -275,7 +285,7 @@ values."
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
-   ;; over any automatically added closing parenthesis, bracket, quote, etc…
+   ;; over any automatically added closing parenthesis, bracket, quote, etcâ€¦
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
    dotspacemacs-smart-closing-parenthesis nil
    ;; Select a scope to highlight delimiters. Possible values are `any',
