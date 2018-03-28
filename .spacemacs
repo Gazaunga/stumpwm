@@ -56,7 +56,6 @@ values."
       ruby
       ruby-on-rails
       javascript
-      elixir
       yaml
      )
    ;; List of additional packages that will be installed without being
@@ -142,7 +141,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Iosevka"
-                               :size 13
+                               :size 15
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
