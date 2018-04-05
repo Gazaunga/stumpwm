@@ -18,3 +18,5 @@ zathura-djvu
 zathura-pdf-mupdf
 xfe
 quicklisp
+j4-dmenu-desktop
+dmenu
