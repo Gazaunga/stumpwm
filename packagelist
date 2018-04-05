@@ -17,6 +17,9 @@ zathura-ps
 zathura-djvu
 zathura-pdf-mupdf
 xfe
+cl-alexandria
+cl-ppcre
+clx-git
 quicklisp
 j4-dmenu-desktop
 dmenu
