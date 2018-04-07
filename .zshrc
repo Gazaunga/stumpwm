@@ -184,3 +184,4 @@ zsh_sh_p="$(cat $zsh_sh)"
 unset zsh_sh zsh_sh_p
 
 source $HOME/zsh/windows-theme.zsh
+# 桜
