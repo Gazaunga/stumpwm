@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xset fp+ /home/gazbit/.fonts/
+sudo fc-cache -fv
