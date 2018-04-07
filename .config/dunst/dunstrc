@@ -25,13 +25,13 @@
     #icon_folders = 
 
 [frame]
-    width = 1
-    color = "#c0c5ce"
+    frame_width = 1
+    frame_color = "#c0c5ce"
 
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
-    history = ctrl+grave
+    #history = ctrl+grave
     context = ctrl+shift+period
 
 [urgency_low]
